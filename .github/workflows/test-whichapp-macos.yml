@@ -22,9 +22,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: whichapp homebrew
+        run: echo
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-            whichapp finder
+            homebrew --help
+            if [ "$?" != "0" ]; then
+            echo oh-oh
+            fi
